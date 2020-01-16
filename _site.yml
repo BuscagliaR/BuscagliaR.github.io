@@ -9,3 +9,7 @@ navbar:
       href: about.html
     - text: "Classes"
       href: classes.html
+output:
+  html_document:
+    theme: flatly
+    css: style.css
