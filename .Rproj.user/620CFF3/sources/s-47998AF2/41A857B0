@@ -7,18 +7,18 @@
     "folds" : "",
     "hash" : "0",
     "id" : "41A857B0",
-    "lastKnownWriteTime" : 1579136515,
-    "last_content_update" : 1579136515773,
+    "lastKnownWriteTime" : 1579149358,
+    "last_content_update" : 1579149358134,
     "path" : "C:/Users/Robert/Dropbox/Northern Arizona University/Github_Repos/buscagliar.github.io/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "4,48",
+        "cursorPosition" : "8,31",
         "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 5,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

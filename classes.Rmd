@@ -2,4 +2,8 @@
 title: "Classes"
 ---
 
+## Spring 2020
+
 STA 473
+
+STA 571
