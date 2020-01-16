@@ -9,6 +9,8 @@ navbar:
       href: about.html
     - text: "Classes"
       href: classes.html
+    - text: "Code"
+      href: code.html
 output:
   html_document:
     theme: flatly
