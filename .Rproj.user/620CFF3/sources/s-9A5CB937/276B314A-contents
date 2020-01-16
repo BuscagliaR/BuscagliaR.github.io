@@ -1,9 +1,11 @@
 name: "buscagliar-website"
 output_dir: "."
 navbar:
-  title: "Robert's Website"
+  title: "Dr. Robert Buscaglia"
   left:
     - text: "Home"
       href: index.html
     - text: "About Me"
       href: about.html
+    - text: "Classes"
+      href: classes.html
