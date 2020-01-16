@@ -1,0 +1,9 @@
+name: "buscagliar-website"
+output_dir: "."
+navbar:
+  title: "Robert's Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About Me"
+      href: about.html
