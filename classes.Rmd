@@ -1,35 +1,41 @@
----
-title: "Classes"
----
 
-## Spring 2020
+# Spring 2020
 
-STA 473 - Introduction to Mathematical Statistics I
+### STA 473 - Introduction to Mathematical Statistics I
 
-### Online Lectures
+**Online Lectures**
 
-#### Chapter 4
+**Chapter 4**
 
-[Section 4-3 Joint Distribution](Sec4-3_Joint_Distribution.html)
+[*Section 4-3 Joint Distribution*](Sec4-3_Joint_Distribution.html)
 
-[Section 4-4 Independent Random Variables](Sec4-4_Independent_RVs.html)
+[*Section 4-4 Independent Random Variables*](Sec4-4_Independent_RVs.html)
 
-STA 571 - Statistical Methods II
+$~$
 
-## Fall 2019
+### STA 571 - Statistical Methods II
 
-STA 570 - Statistical Methods I
+$~$
+$~$
 
-STA 578 - Statistical Computing
+# Fall 2019
 
-## Spring 2019
+### STA 570 - Statistical Methods I
 
-STA 570L - Introduction to R
+### STA 578 - Statistical Computing
 
-STA 571 - Statistical Methods II
+$~$
 
-## Fall 2018
+# Spring 2019
 
-STA 570 - Statistical Methods I
+### STA 570L - Introduction to R
 
-STA 570L - Introduction to R
+### STA 571 - Statistical Methods II
+
+$~$
+
+# Fall 2018
+
+### STA 570 - Statistical Methods I
+
+### STA 570L - Introduction to R

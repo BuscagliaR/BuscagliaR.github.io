@@ -1,4 +1,5 @@
 {
-    "cursorPosition" : "83,16",
-    "scrollLine" : "79"
+    "cursorPosition" : "27,9",
+    "ignored_words" : "img,src,jpg,pmf,pmfs,bivariate,th,Tahoma,Bivariate\n",
+    "scrollLine" : "0"
 }
