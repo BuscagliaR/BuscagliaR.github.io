@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="fast">
-<h1>Variance and Standard Deviation</h1><p>March 27, 2020</p>
+<h1>Variance and Standard Deviation</h1><p>March 29, 2020</p>
 
 <div class="slideContent" >
 <p>Section 4.6</p>
@@ -871,7 +871,7 @@ Var[X] = E[(X-\mu)^2] \neq E[|X-\mu|] \neq E[X-\mu]
 <section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
 <h2>Working with Variance</h2>
 <div class="slideContent" >
-<p><em>Result.</em> </p>
+<p><em>Result 1.</em> </p>
 
 <p>\[ 
 \begin{aligned}
@@ -890,6 +890,166 @@ Var[X] &= E[(X-\mu)^2] \\
 &= E[X^2] - \mu^2
 \end{aligned}
  \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Example 1</h3>
+<div class="slideContent" >
+<p>Suppose \( \small X \) is a random variable with \( \small p(x) = \frac{1}{6}1_{\{1,2,...,6\}}(x) \).</p>
+
+<p>Find \( E[X] \) and \( Var[X] \).</p>
+
+<p>To find \( E[X] \), we apply the definition.</p>
+
+<p>\[ 
+E[X] = \sum\limits_{x=1}^6\frac{x}{6} = \frac{21}{6} = \frac{7}{2} = \mu
+ \]</p>
+
+<p>For finding the variance, it is often easier to find \( E[X^2] \) and apply <em>Result 1</em>.</p>
+
+<p>\[ 
+E[X^2] = \sum\limits_{x=1}^6\frac{x^2}{6} = \frac{91}{6}
+ \]</p>
+
+<p><em>Note.</em>  This result uses that \( \sum\limits_{x=1}^{k}x^2 = \frac{k(k+1)(2k+1)}{6} \)</p>
+
+<p>We can then apply <em>Result 1</em> to show that</p>
+
+<p>\[ 
+\sigma^2 = Var[X] = E[X^2] - E[X]^2 = \frac{91}{6} - \left(\frac{7}{2}\right)^2 = \frac{35}{12}
+ \]</p>
+
+<p>We can also state that \( \sigma = \sqrt{\sigma^2} = \sqrt{\frac{35}{12}} \approx 1.7078 \).</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Variance and Independent Random Variables</h2>
+<div class="slideContent" >
+<p><em>Result 2.</em> </p>
+
+<p>Let \( X \) and \( Y \) be independent random variables and set \( Z = aX + bY + c \) for any constants \( a,b,c \).  Then,</p>
+
+<p>\[ 
+\sigma^2_Z = Var[Z] = a^2Var[X] + b^2Var[Y]
+ \]</p>
+
+<p>or</p>
+
+<p>\[ 
+\sigma^2_Z = a^2\sigma^2_X + b^2\sigma^2_Y
+ \]</p>
+
+<p><em>Important Notes/Cases when X and Y independent random variables.</em></p>
+
+<p>\( Var[X + Y] = Var[X] + Var[Y] \)</p>
+
+<p>\( Var[X - Y] = Var[X] + Var[Y] \)</p>
+
+<p>\( Var[aX] = a^2Var[X] \)</p>
+
+<p>\( Var[a] = 0 \) for any constant \( a \).</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Binomial Variance</h2>
+<div class="slideContent" >
+<p><em>Result 3.</em> </p>
+
+<p>Suppose \( \small X \sim Binom(n,p) \), then \( \small \sigma^2_X = np(1-p) \).</p>
+
+<p><em>Proof.</em></p>
+
+<p>We use that \( X \) can be written as the sum of indpendent Bernoulli trials, such that if \( X_1, ..., X_n \stackrel{iid}\sim Ber(p) \), then, \( X = \sum\limits_{i=1}^nX_i \).  Now apply <em>Result 2.</em>,</p>
+
+<p>\[ 
+\begin{aligned}
+Var[X] &= Var[\sum\limits_{i=1}^nX_i] \\
+&= \sum\limits_{i=1}^nVar[X_i] &\#\text{Independent} \\
+&= nVar[X_1] &\#\text{Identical}
+\end{aligned}
+ \]</p>
+
+<p>Where \( Var[X_1] \) represents the variance of a \( Bernoulli(p) \) random variable.</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Binomial Variance</h2>
+<div class="slideContent" >
+<p><em>Proof continued.</em></p>
+
+<p>What is \( Var[X_1] \)?</p>
+
+<p>Recall that \( E[X_1] = p \) from earlier results of Bernoulli random variables.</p>
+
+<p>We want to use <em>Result 1</em> again here, so we must find</p>
+
+<p>\[ 
+E[X_1^2] = \sum\limits_{x=0}^1x_1^2P(X_1=x_1) = (1)^2p + (0)^2(1-p) = p
+ \]</p>
+
+<p>and through application of <em>Result 1</em> we have that</p>
+
+<p>\[ 
+Var[X_1] = p - p^2 = p(1-p)
+ \]</p>
+
+<p>Returning to our result for a Binomial random variable, we can now state that</p>
+
+<p>\[ 
+Var[X] = nVar[X_1] = np(1-p)
+ \]</p>
+
+<p>when \( X \sim Binom(n,p) \).</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Example 2</h3>
+<div class="slideContent" >
+<p>Consider \( Y \) a random variable with \( p_Y(y) = \frac{1}{2}1_{\{1,6\}}(y) \).</p>
+
+<p>Find \( E[Y] \).</p>
+
+<p>\[ 
+E[Y] = 1\frac{1}{2} + 6\frac{1}{2} = \frac{7}{2}
+ \]</p>
+
+<p>Find \( E[Y^2] \).</p>
+
+<p>\[ 
+E[Y^2] = 1^2\frac{1}{2} + 6^2\frac{1}{2} = \frac{37}{2}
+ \]</p>
+
+<p>Find \( \sigma^2_Y = Var[Y] \).</p>
+
+<p>\[ 
+\sigma^2_Y = E[Y^2] - E[Y]^2 = \frac{37}{2} - \left(\frac{7}{2}\right)^2 = \frac{74}{4} - \frac{49}{4} = \frac{25}{4} = 6.25
+ \]</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Distribution Results</h2>
+<div class="slideContent" >
+<p>(1) If \( X \sim Unif(\{1,...,n\}) \), then \( Var[X] = \frac{n^2-1}{12} \)</p>
+
+<p><em>Note.</em> What if \( \small X \sim Unif(\{a,...,b\}) \)?</p>
+
+<p>(2) If \( X \sim Ber(p) \), then \( Var[X] = p(1-p) \).</p>
+
+<p>(3) If \( X \sim Pois(\lambda) \), then \( Var[X] = E[X] = \lambda \).</p>
+
+<p><em>Can you prove these?</em></p>
 
 </div>
 
