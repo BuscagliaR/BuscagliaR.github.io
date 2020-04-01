@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="fast">
-<h1>Covariance and Correlation</h1><p>March 29, 2020</p>
+<h1>Covariance and Correlation</h1><p>April 01, 2020</p>
 
 <div class="slideContent" >
 <p><strong>Section 4.7</strong></p>
@@ -876,6 +876,220 @@ Cov[X,Y] = E[XY] - \mu_X\mu_Y
 </ul>
 
 <p>(C ) If we expect to find pairs in all four quadrants, the random variables are <em>not</em> linearly associated.</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Covariance and Independence</h2>
+<div class="slideContent" >
+<p><em>Result 2.</em> </p>
+
+<p>Let \( \small X \) and \( \small Y \) be independent random variables, then \( Cov[X,Y] = 0 \).</p>
+
+<p><em>Proof.</em></p>
+
+<p>Let \( \small X \) and \( \small Y \) be independent random variables, then</p>
+
+<p>\[ 
+\begin{aligned}
+Cov[X,Y] &= E[XY]-\mu_X\mu_Y \\
+&= E[X]E[Y] - \mu_X\mu_Y \quad &\#\text{Indepence of X and Y} \\
+&= \mu_X\mu_Y - \mu_X\mu_Y = 0
+\end{aligned}
+ \]</p>
+
+<p><em>Note.</em></p>
+
+<p>The converse is not true in general; \( \small Cov[X,Y] = 0 \) does <strong>not</strong> imply that \( \small X \) and \( \small Y \) are independent.</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Examples</h3>
+<div class="slideContent" >
+<p>For the following set of questions, let \( \small X_1, X_2 \stackrel{iid}\sim Unif(\{1,2,3,4\}) \) and set \( \small Y = X_1 + X_2 \).</p>
+
+<p>Q1. Find \( E[Y] \)</p>
+
+<p>\[ 
+\begin{aligned}
+E[Y] &= E[X_1 + X_2] \\
+&= E[X_1] + E[X_2] \quad &\#\text{Linear Combination} \\
+&= 2E[X_1] \quad &\#\text{Indentical} \\
+&= 2\left(\frac{4+1}{2}\right) = 5 \quad &\#\text{Uniform Expectation}
+\end{aligned}
+ \]</p>
+
+<p>Q2. Find \( Var[Y] \)</p>
+
+<p>\[ 
+\begin{aligned}
+Var[Y] &= Var[X_1 + X_2] \\
+&= Var[X_1] + Var[X_2] \quad &\#\text{Independence} \\
+&= 2Var[X_1] \quad &\#\text{Indentical} \\
+&= 2\left(\frac{4^2-1}{12}\right) = \frac{15}{6} = \frac{5}{2} \quad &\#\text{Uniform Variance}
+\end{aligned}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Examples Continued</h3>
+<div class="slideContent" >
+<p>Now we consider the bivariate random variable \( \small (X_1, Y) \).</p>
+
+<p>Q3. Give and draw the joint support for \( \small (X_1, Y) \).</p>
+
+<p><img src="data:image/png;base64,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" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
+
+<p>We notice that the random variables seem to have an association.  As we increase \( X_1 \), it seems as though the values of \( Y \) also increase.  We could have also given the joint support by listing the pairs.</p>
+
+<p>\[ 
+\begin{aligned}
+S_{X_1, Y} = \{&(1,2), (1,3), (1,4), (1,5), \\
+    &...\\
+    &(4,5), (4,6), (4,7), (4,8) \}
+\end{aligned}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Examples Continued</h3>
+<div class="slideContent" >
+<p>Q4. Are \( \small X_1 \) and \( \small Y \) independent?</p>
+
+<p>No. Cartesian product of the marginal supports is not equivalent to the joint support.</p>
+
+<p>\[ 
+S_{X_1} = \{1,2,3,4\} \quad \quad S_{Y} = \{2,3,...,8\}
+ \]</p>
+
+<p>Thus, \( S_{X_1,Y} \neq S_{X_1} \times S_Y \).  Therefore, \( \small X_1 \) and \( \small Y \) are not independent.</p>
+
+<p>Q5. What is the joint pmf for \( \small (X_1, Y) \)?</p>
+
+<p>Recall that \( \small X_1, X_2 \) are uniform.  Consider \( \small P(X_1 = x_1, Y = y) \).</p>
+
+<p>\[ 
+\begin{aligned}
+P(X_1 = x_1, Y = y) &= P(X_1 = x_1, Y = x_1 + x_2) \\
+&= P(Y = x_1 + x_2|X_1 = x_1)P(X_1 = x_1) \\
+&= P(X_2 = x_2)P(X_1 = x_1) \\
+&= (1/4)(1/4) = 1/16
+\end{aligned}
+ \]</p>
+
+<p>You could have also recognized that each observation comes from a pair of independent uniforms and arrived to this conclusion without the mathematics above.  I like being able to work out the probabilities though.</p>
+
+<p>We can state that the joint pmf for \( \small (X_1, Y) \) is</p>
+
+<p>\[ 
+p_{X_1, Y}(x_1,y) = \frac{1}{16}1_{S_{X_1,Y}}(x_1,y)
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Examples Continued</h3>
+<div class="slideContent" >
+<p>Q5. What is the covariance of \( \small (X_1, Y) \)?</p>
+
+<p>\[ 
+Cov[X_1, Y] = E[X_1Y] - \mu_{X_1}\mu_Y
+ \]</p>
+
+<p>Here we do not have that \( \small X_1 \) and \( \small Y \) are independent and must calculate for \( \small E[X_1Y] \) directly.</p>
+
+<p>\[ 
+\begin{aligned}
+E[X_1Y] &= \sum\limits_{(x_1,y) \in S_{X_1,Y}}(x_1y)p_{X_1, Y}(x_1,y) \\
+&= \sum\limits_{(x_1,y) \in S_{X_1,Y}}\frac{x_1y}{16} \\
+&= \frac{1}{16}(1(2) + 1(3) + 1(4) + 1(5) + 2(3) + ... + 4(8)) = \frac{55}{4}
+\end{aligned}
+ \]</p>
+
+<p>Now we can find the covariance,</p>
+
+<p>\[ 
+Cov[X_1, Y] = \frac{55}{4} - \left(\frac{5}{2}\right)(5) = \frac{5}{4}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Examples Continued</h3>
+<div class="slideContent" >
+<p>How do we interpret the result that \( \small Cov[X_1, Y] = \frac{5}{4} \)?</p>
+
+<p>\( \small Cov[X_1,Y] > 0 \), we can state that larger values of \( \small x_1 \) tend to be associated with larger values of \( \small Y \).</p>
+
+<p><img src="data:image/png;base64,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" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+<p>How do we discuss the strength of this relationship?  This result isn&#39;t on a meaningful scale.  </p>
+
+<p>To discuss the covariance between any two random variables we use a standardized scale.</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Correlation</h2>
+<div class="slideContent" >
+<p><em>Result 3.</em> </p>
+
+<p>For any random variables \( \small X \) and \( \small Y \), with variances \( \small \sigma^2_X, \sigma^2_Y \), the covariance between \( \small X \) and \( \small Y \) is bounded such that</p>
+
+<p>\[ 
+-\sigma_X\sigma_Y \leq Cov[X,Y] \leq \sigma_X\sigma_Y
+ \]</p>
+
+<p><em>Definition.</em></p>
+
+<p>The <strong>correlation</strong> between random variables \( \small X \) and \( \small Y \) is</p>
+
+<p>\[ 
+Corr(X,Y) = \frac{Cov[X,Y]}{\sigma_X\sigma_Y}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Properties of Covariance and Correlation</h3>
+<div class="slideContent" >
+<p>(1) \( -1 \leq Corr(X,Y) \leq 1 \)</p>
+
+<p>(2) Let \( Y = a + bX \).  </p>
+
+<p>If \( b > 0 \), then \( Cov[X,Y] > 0 \).</p>
+
+<p>If \( b < 0 \), then \( Cov[X,Y] < 0 \).</p>
+
+<p>When we standardize and use correlation we can state</p>
+
+<p>\[ 
+Corr(X,Y) = 
+\begin{cases}
+    -1  & \text{ if }  \quad b < 0 \\
+    1  & \text{ if }  \quad b > 0 \\
+    0 & \text{ if }  \quad b = 0
+\end{cases}
+ \]</p>
+
+<p><em>Returning to Examples.</em></p>
+
+<p>Using the results from our earlier example, we could find that</p>
+
+<p>\[ 
+Corr(X_1, Y) = \frac{Cov[X_1,Y]}{\sigma_{X_1}\sigma_Y} = \frac{(5/4)}{\sqrt{(5/4)(5/2)}} = \frac{\sqrt{2}}{2} \approx 0.7071
+ \]</p>
 
 </div>
 
