@@ -17,6 +17,10 @@
 
 [*Section 4-7 Covariance and Correlation*](Sec4-7_Covariance.html)
 
+[*Section 4-9 Results for Linear combinations*](Sec4-9_Results_of_Linear_Combinations.html)
+
+[*Section 4-8 Conditional Distributions*](Sec4-8_Conditional_Distributions.html)
+
 $~$
 
 ### STA 571 - Statistical Methods II
