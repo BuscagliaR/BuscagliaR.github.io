@@ -23,9 +23,11 @@
 
 $~$
 
-**Chapter 5**
+**Chapter 5 : Discrete Distributions**
 
 [*Section 5-1 Geometric Distribution*](Sec5-1_Geometric.html)
+
+[*Section 5-2 Hypergeometric Distribution*](Sec5-2_HyperGeometric.html)
 
 $~$
 

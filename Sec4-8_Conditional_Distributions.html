@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="fast">
-<h1>Conditional Distributions</h1><p>April 05, 2020</p>
+<h1>Conditional Distributions</h1><p>April 07, 2020</p>
 
 <div class="slideContent" >
 <p><strong>Section 4.8</strong></p>
@@ -897,8 +897,8 @@ P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}
 
 <p>\[ 
 \begin{aligned}
-P(X_1 = x|S=k) &= \frac{(P(X_1 = x)P\left(\sum\limits_{i=2}^nX_i = k - x\right) }{P(S=k)} \\
-&= \Large \frac{\left(\frac{e^{-\lambda}\lambda^x}{x!}\right)\left(\frac{e^{-(n-1)\lambda}(n-1)\lambda^{k-x}}{(k-x)!}\right)}{\frac{e^{-n\lambda}n\lambda^k}{k!}}
+P(X_1 = x|S=k) &= \frac{P(X_1 = x)P\left(\sum\limits_{i=2}^nX_i = k - x\right) }{P(S=k)} \\
+&= \Large \frac{\left(\frac{e^{-\lambda}\lambda^x}{x!}\right)\left(\frac{e^{-(n-1)\lambda}((n-1)\lambda)^{k-x}}{(k-x)!}\right)}{\frac{e^{-n\lambda}(n\lambda)^k}{k!}}
 \end{aligned}
  \]</p>
 

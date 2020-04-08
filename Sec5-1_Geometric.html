@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="fast">
-<h1>Geometric Distribution</h1><p>April 05, 2020</p>
+<h1>Geometric Distribution</h1><p>April 07, 2020</p>
 
 <div class="slideContent" >
 <p><strong>Section 5.1</strong></p>
@@ -809,7 +809,7 @@ hljs.initHighlightingOnLoad();
 
 <p>Consider tossing a coin until the first heads appears.  Record \( \small X \) the number of tosses until the first head occurs (inclusive of the successful toss).  What is the distribution of \( \small X \)?</p>
 
-<h2>Geometric Experiment</h2>
+<h3>Geometric Experiment</h3>
 
 <p>(1) Independent Trials</p>
 
@@ -829,7 +829,7 @@ hljs.initHighlightingOnLoad();
 <section data-transition="linear" data-transition-speed="fast">
 <h3>Geometric pmf</h3>
 <div class="slideContent" >
-<h2>What is the pmf of a geometric distribution?</h2>
+<h3>What is the pmf of a geometric distribution?</h3>
 
 <p>Consider outcomes of the random experiment.</p>
 
@@ -842,7 +842,7 @@ p(x) &= p(\stackrel{x-1}{F\cdot \cdot \cdot F}S) = (1-p)^{x-1}p
 \end{aligned}
  \]</p>
 
-<h2>Is this a valid pmf?</h2>
+<h3>Is this a valid pmf?</h3>
 
 <p>\[ 
 \begin{aligned}
@@ -886,21 +886,21 @@ P(X = x) = (1-p)^{x-1}p \quad \text{for } x = 1, 2, 3, ...
 <div class="slideContent" >
 <p>Draw with replacement from a standard deck until a Queen is drawn.</p>
 
-<h2>What is the pmf of the number of draws, \( \small X \), needed to observe the first Queen?</h2>
+<h3>What is the pmf of the number of draws, \( \small X \), needed to observe the first Queen?</h3>
 
-<p>Recall that for a well-shuffled standard deck of 52-cards, the \( P(draw Queeen) = 1/13 \).  We observe that \( \small X \sim Geom(1/13) \), thus the pmf is</p>
+<p>Recall that for a well-shuffled standard deck of 52-cards, in a single draw \( \small P(Queeen) = 1/13 \).  We observe that \( \small X \sim Geom(1/13) \), thus the pmf is</p>
 
 <p>\[ 
 P(X=x) = \left(\frac{12}{13}\right)^{x-1}\left(\frac{1}{13}\right)1_{\{1,2,3,...\}}(x)
  \]</p>
 
-<h2>What is the probability it takes exactly 3 draws to see the first Queen?</h2>
+<h3>What is the probability it takes exactly 3 draws to see the first Queen?</h3>
 
 <p>\[ 
 P(X=3) = \left(\frac{12}{13}\right)^{2}\left(\frac{1}{13}\right) = \frac{144}{2197} \approx 0.0655
  \]</p>
 
-<h2>What is the probability it takes more than 3 draws to see the first Queen?</h2>
+<h3>What is the probability it takes more than 3 draws to see the first Queen?</h3>
 
 <p>\[ 
 \begin{aligned}
@@ -972,6 +972,71 @@ E[X] &= p\sum\limits_{x=1}^\infty xq^{x-1} = p\sum\limits_{x=1}^\infty \frac{d}{
 <section data-transition="linear" data-transition-speed="fast">
 <h3>Geometric Example Continued</h3>
 <div class="slideContent" >
+<p>Return to using \( \small X \sim Geom(1/13) \).  Then, the exepected number of draws until getting the first Queen is,</p>
+
+<p>\[ 
+\mu_X = E[X] = \frac{1}{p} = 13
+ \]</p>
+
+<p>Thus, on average, it will take \( 13 \) draws with replacement to observe the first Queen.  The variance for this distribution is,</p>
+
+<p>\[ 
+\sigma^2_X = V[X] = \frac{(1-p)}{p^2} = \frac{(12/13)}{(1/13)^2} = 13\cdot 12 = 156
+ \]</p>
+
+<p>and thus \( \small \sigma_X = \sqrt{156} \approx 12.49 \).</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Geometric and Memoryless Property</h2>
+<div class="slideContent" >
+<p><em>Result.</em></p>
+
+<p>If \( X \sim Geom(p) \) and \( 0 < s < t \) for outcomes \( s,t \in S_X \), then</p>
+
+<p>\[ 
+P(X > t|X > s) = P(X > t-s)
+ \]</p>
+
+<p><em>Note.</em></p>
+
+<p>Only a few distributions have this property.  The distribution is said to &#39;forget&#39; it has all ready been through \( s \) trials.  An example helps.</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Memoryless Property Example</h3>
+<div class="slideContent" >
+<p>Roll three six-sided fair dice repeatedly.  Let \( \small X \) be the number of rolls until you obtain a <em>3-of-a-kind</em> (getting all three dice to be the same value).</p>
+
+<p>\[ 
+P(\text{3-of-a-kind}) = \frac{6\cdot 1\cdot 1}{6\cdot 6\cdot 6} = \frac{1}{36}
+ \]</p>
+
+<p>Then \( \small X\sim Geom(1/36) \).</p>
+
+<h3>What is the probability it takes more than 20 rolls?</h3>
+
+<p>We use the property that for geometric distribution \( \small P(X > x) = (1-p)^x \).  Then,</p>
+
+<p>\[ 
+P(X > 20) = \left(1- \frac{1}{36}\right)^{20}
+ \]</p>
+
+<h3>After 20 rolls, you have not observed a 3-of-a-kind?  What is the probability it takes more than 40 rolls to observe one?</h3>
+
+<p>\[ 
+P(X>40|X>20) = \frac{(1-1/36)^{40}}{(1-1/36)^{20}} = \left(1- \frac{1}{36}\right)^{20} = P(X>20)
+ \]</p>
+
+<p>In this context, the idea of <em>memoryless</em> is that the next \( 20 \) trials does not depend on the first \( 20 \) trials, thus is has &#39;no-memory&#39; of the earlier events. In fact, this will hold for all intervals of size \( 20 \).  </p>
+
+<p>\[ 
+P(X>20) = P(X>30|X>10) = P(X>40|X>20) = P(X>54|X>34) = \left(1- \frac{1}{36}\right)^{20}
+ \]</p>
 
 </div>
 
@@ -1030,7 +1095,7 @@ function commandsForSlide(indexh) {
       transition: 'linear',
       transitionSpeed: 'fast',
       rtl: false,
-      width: 1440,
+      width: 1640,
       height: 1250,
     
       dependencies: []
