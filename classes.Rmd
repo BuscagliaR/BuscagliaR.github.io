@@ -31,6 +31,12 @@ $~$
 
 $~$
 
+**Chapter 6 : Continuous Probability**
+
+[*Sections 6-1 through 6-3 Continuous Probability*](Sec6-1_Continuous.html)
+
+$~$
+
 ### STA 571 - Statistical Methods II
 
 $~$
