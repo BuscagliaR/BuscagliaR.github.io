@@ -37,6 +37,10 @@ $~$
 
 [*Sections 6-3 Continuous Uniform Distribution*](Sec6-3_Uniform.html)
 
+[*Sections 6-4 Expectation and Variance of Continuous Random Variables*](Sec6-4_Cont_Expectation.html)
+
+[*Sections 6-5 Exponential Distribution*](Sec6-5_Exp_Dist.html)
+
 $~$
 
 ### STA 571 - Statistical Methods II
