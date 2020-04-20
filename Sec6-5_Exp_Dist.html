@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="fast">
-<h1>Exponential Distribution</h1><p>April 16, 2020</p>
+<h1>Exponential Distribution</h1><p>April 19, 2020</p>
 
 <div class="slideContent" >
 <h2>Chapter 6</h2>
@@ -895,6 +895,259 @@ F(x) = (1-e^{-\lambda x})1_{(0,\infty)}
 e^{-\lambda x} & x > 0
 \end{cases}
  \]</p>
+
+</div>
+
+</section>
+<section data-state="sub-section" data-transition="linear" data-transition-speed="fast">
+<h2>Exponential Distribution Results</h2>
+<div class="slideContent" >
+<p><em>Result.</em></p>
+
+<p>Let \( \small X \sim Exp(\lambda) \).  Then,</p>
+
+<p>(1)
+\[ 
+E[X] = \frac{1}{\lambda}
+ \]</p>
+
+<p>(2)
+\[ 
+E[X] = \frac{1}{\lambda^2}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Proof of Expectation of the Exponential Distribution</h3>
+<div class="slideContent" >
+<p>I provide the proof of the expectation.  This requires the use of integration by parts.  I would like to ask that you prepare a solution of the variance, which requires proof by parts twice and proceeds very closely to what is presented below.</p>
+
+<h3>Proof of \( E[X] \) for \( X \sim Exp(\lambda) \)</h3>
+
+<p>\[ 
+\begin{aligned}
+E[X] &= \int\limits_{-\infty}^{\infty}xf(x)dx = \int\limits_{0}^{\infty}x\lambda e^{-\lambda x}dx  \quad \#\text{cdf and limits} \\
+&= \lambda\int\limits_{0}^{\infty}xe^{-\lambda x}dx
+\end{aligned}
+ \]</p>
+
+<p>To solve this integral, we need to use integration by parts.  I always relate integration by parts to the chain-rule of differentiation, which I always remember.  First, we set</p>
+
+<p>\[ 
+\begin{aligned}
+u = x \quad & \quad du = dx \\
+dv = e^{-\lambda x}dx \quad & \quad v = -\frac{1}{\lambda}e^{-\lambda x}
+\end{aligned}
+ \]</p>
+
+<p>Recall from the chain rule that if we have function \( u(x) \) and \( v(x) \), then</p>
+
+<p>\[ 
+(uv)^{'} = u'v + v'u
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Proof of Expectation of the Exponential Distribution</h3>
+<div class="slideContent" >
+<p>\[ 
+\begin{aligned}
+u = x \quad & \quad du = dx \\
+dv = e^{-\lambda x}dx \quad & \quad v = -\frac{1}{\lambda}e^{-\lambda x}
+\end{aligned}
+ \]</p>
+
+<p>Recall from the chain rule that if we have function \( u(x) \) and \( v(x) \), then</p>
+
+<p>\[ 
+(uv)^{'} = u'v + v'u
+ \]</p>
+
+<p>Then taking the anti-derivative of each side, we show that</p>
+
+<p>\[ 
+\int u'v + \int v'u = \int (uv)^{'} = uv
+ \]</p>
+
+<p>Where I am being &#39;sloppy&#39; in my notation (everything here could be \( u(x), v(x) \) with integration respect to \( x \), or \( dx \)).  Rearranging gives the rule commonly known as <em>integration by parts</em>.</p>
+
+<p>\[ 
+\int v'u = uv - \int u'v
+ \]</p>
+
+<p>Applying the decomposing &#39;parts&#39; given at the top of the slide shows us that</p>
+
+<p>\[ 
+\int\limits_{0}^{\infty}xe^{-\lambda x}dx = \left.-\frac{x}{\lambda}e^{-\lambda x}\right|_0^{\infty} - \int\limits_{0}^{\infty}-\frac{1}{\lambda}e^{-\lambda x}dx = \left.-\frac{x}{\lambda}e^{-\lambda x}\right|_0^{\infty} + \int\limits_{0}^{\infty}\frac{1}{\lambda}e^{-\lambda x}dx
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Proof of Expectation of the Exponential Distribution</h3>
+<div class="slideContent" >
+<p>We are now left with solving</p>
+
+<p>\[ 
+\int\limits_{0}^{\infty}xe^{-\lambda x}dx = \left.-\frac{x}{\lambda}e^{-\lambda x}\right|_0^{\infty} + \int\limits_{0}^{\infty}\frac{1}{\lambda}e^{-\lambda x}dx
+ \]</p>
+
+<p>of which we can now directly solve the integral on the right hand side of the equation.</p>
+
+<p>\[ 
+\frac{1}{\lambda}\int\limits_{0}^{\infty}e^{-\lambda x}dx = \left.\frac{1}{\lambda}\left(-\frac{1}{\lambda}e^{-\lambda x}\right)\right|_0^{\infty} = \left.-\frac{1}{\lambda^2}e^{-\lambda x}\right|_0^{\infty}
+ \]</p>
+
+<p>Thus,</p>
+
+<p>\[ 
+\int\limits_{0}^{\infty}xe^{-\lambda x}dx = \left.-\frac{x}{\lambda}e^{-\lambda x}\right|_0^{\infty} - \left.\frac{1}{\lambda^2}e^{-\lambda x}\right|_0^{\infty}
+ \]</p>
+
+<p>All that is left is to apply the functions at the limits of the integrand.</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Proof of Expectation of the Exponential Distribution</h3>
+<div class="slideContent" >
+<p>Returning to our proof, we can now state</p>
+
+<p>\[ 
+\begin{aligned}
+E[X] &= \lambda\int\limits_{0}^{\infty}xe^{-\lambda x}dx \\
+&= \lambda \left.\left(-\frac{x}{\lambda}e^{-\lambda x} -\frac{1}{\lambda^2}e^{-\lambda x}\right)\right|_0^{\infty} \\
+&= \left.\left(-xe^{-\lambda x} -\frac{1}{\lambda}e^{-\lambda x}\right)\right|_0^{\infty} \\
+&= \lim\limits_{x\to \infty}\left(-xe^{-\lambda x} -\frac{1}{\lambda}e^{-\lambda x}\right) - (-0e^0 - \frac{1}{\lambda}e^{-\lambda \cdot 0}) \\
+&= \lim\limits_{x\to \infty}\left(-xe^{-\lambda x} -\frac{1}{\lambda}e^{-\lambda x}\right) + \frac{1}{\lambda}
+\end{aligned}
+ \]</p>
+
+<p>Where</p>
+
+<p>\[ 
+\lim\limits_{x\to \infty}\left(-xe^{-\lambda x} + -\frac{1}{\lambda}e^{-\lambda x}\right) = 0
+ \]</p>
+
+<p>We finish the proof by showing this result.</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Proof of Expectation of the Exponential Distribution</h3>
+<div class="slideContent" >
+<p>It is clear that </p>
+
+<p>\[ 
+\lim\limits_{x\to \infty}\left(-\frac{1}{\lambda}e^{-\lambda x}\right) = 0
+ \]</p>
+
+<p>However, we must apply a little more effort to the first limit because</p>
+
+<p>\[ 
+\lim\limits_{x\to \infty}-xe^{-\lambda x} = \lim\limits_{x\to \infty}-\frac{x}{e^{\lambda x}}
+ \]</p>
+
+<p>has limits \( \infty/\infty \), thus we must apply <em>L&#39;Hopital&#39;s Rule</em>.</p>
+
+<p>\[ 
+\lim\limits_{x\to \infty}-xe^{-\lambda x} = \lim\limits_{x\to \infty}-\frac{x}{e^{\lambda x}} = \lim\limits_{x\to \infty}-\frac{1}{\lambda e^{\lambda x}} = 0
+ \]</p>
+
+<p>We thus achieve our solution that</p>
+
+<p>\[ 
+E[X] = \lambda\int\limits_{0}^{\infty}xe^{-\lambda x}dx = \frac{1}{\lambda}
+ \]</p>
+
+<p>To prove the <em>variance</em> component you need to use <em>integration by parts</em> twice to show that</p>
+
+<p>\[ 
+E[X^2] = \lambda\int\limits_{0}^{\infty}x^2e^{-\lambda x}dx = \frac{2}{\lambda^2}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Exponential Distribution Example</h3>
+<div class="slideContent" >
+<p>Suppose that the time \( \small X \) in minutes from midnight until the next customer enters Walmart follows an exponential distribution with rate \( \small\lambda = 0.4 \).</p>
+
+<p>\[ 
+X \sim Exp(0.4)
+ \]</p>
+
+<h3>Find \( \small E[X] \) and \( \small V[X] \)</h3>
+
+<p>Using the previous results</p>
+
+<p>\[ 
+E[X] = \frac{1}{\lambda} = \frac{1}{0.4} = 2.5 \text{ minutes}
+ \]</p>
+
+<p>This is interpreted as the average time until the next customer arrives (in minutes past midnight).</p>
+
+<p>\[ 
+V[X] = \frac{1}{\lambda^2} = \frac{1}{(0.4)^2} = 6.25 \text{ minutes}^2
+ \]</p>
+
+<p>or, in units of minutes,</p>
+
+<p>\[ 
+\sigma_X = \sqrt{\sigma^2_X} = \sqrt{6.25} = 2.5 \text{ minutes}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Exponential Distribution Example Continued</h3>
+<div class="slideContent" >
+<p>\[ 
+
+ \]</p>
+
+<p>\[ 
+X \sim Exp(0.4)
+ \]</p>
+
+<h3>What is the probability the first customer walks in between \( 2 \) and \( 5 \) minutes after midnight?</h3>
+
+<p>Make use of the cdf for the exponential distribution here,</p>
+
+<p>\[ 
+\begin{aligned}
+P(2 \leq X \leq 5) &= P(X \leq 5) - P(X \leq 2) \\
+&= (1 - e^{-0.4(5)}) - (1 - e^{-0.4(2)}) \\
+&= e^{-0.8} - e^{-2.0} \approx 0.3140
+\end{aligned}
+ \]</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="fast">
+<h3>Memoryless Property of Exponential Distribution</h3>
+<div class="slideContent" >
+<p>Given that a customer has not arrived in the first \( 2 \) minutes, what is the probability it will take another \( 5 \) minutes before the first customer arrives?</p>
+
+<p>\[ 
+\begin{aligned}
+P(X > 2 + 5 | X > 2) &= \frac{P(X > 7)}{P(X > 2)} \\
+&= \frac{e^{-0.4(7)}}{e^{-0.4(2)}} \\
+&= e^{-0.4(5)} = P(X > 5)
+\end{aligned}
+ \]</p>
+
+<p>Thus, this distribution also &#39;forgets&#39; about what has previously occurred.  All &#39;5&#39; minute intervals, given the event has not occurred previously, will have the same probability.</p>
 
 </div>
 

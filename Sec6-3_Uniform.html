@@ -794,7 +794,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="fast">
-<h1>Continuous Uniform Distribution</h1><p>April 16, 2020</p>
+<h1>Continuous Uniform Distribution</h1><p>April 17, 2020</p>
 
 <div class="slideContent" >
 <h2>Chapter 6</h2>
@@ -866,7 +866,7 @@ P(x \in L_c) = \frac{c}{b-a}
 <p>That is, when both \( x_0 \) and \( x_0 + c \) are elements of \( (a,b) \),</p>
 
 <p>\[ 
-P(x \in L_c) = \int\limits_{x_0}^{x_0+c}\frac{1}{b-a} = \frac{x_0 + c - x_0}{b-a} = \frac{c}{b-a}
+P(x \in L_c) = \int\limits_{x_0}^{x_0+c}\frac{1}{b-a} dx = \frac{x_0 + c - x_0}{b-a} = \frac{c}{b-a}
  \]</p>
 
 </div>
@@ -877,11 +877,11 @@ P(x \in L_c) = \int\limits_{x_0}^{x_0+c}\frac{1}{b-a} = \frac{x_0 + c - x_0}{b-a
 <div class="slideContent" >
 <p>My favorite statistics email arrives on Thursdays between \( 4 \) pm and \( 8 \) pm.  Let \( \small X \) be the time the emails arrives on Thursday, assume \( \small X \sim Unif(4,8) \).</p>
 
-<h3>What is the probability the emails arrives after \( 7:45 \) pm?</h3>
+<h3>What is the probability the emails arrives after \( 7:50 \) pm?</h3>
 
 <p>First consider the units of time in hours, then \( 7:50 pm \implies 7 + 50/60 hours = 47/6 \).</p>
 
-<p>Need to find \( P(X > 47/6) \).  What is the pmf?</p>
+<p>Need to find \( P(X > 47/6) \).  What is the pdf?</p>
 
 <p>\[ 
 f(x) = \frac{1}{8-4}1_{(4,8)}(x) = \frac{1}{4}1_{(4,8)}(x)
