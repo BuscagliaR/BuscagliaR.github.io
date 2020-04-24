@@ -45,6 +45,13 @@ $~$
 
 **Chapter 7 : Continuous Distributions**
 
+[*Sections 7-1 Normal Distribution*](Sec7-1_Normal.html)
+
+[*Sections 7-2 Gamma Distribution*](Sec7-2_Gamma.html)
+
+$~$
+$~$
+
 ### STA 571 - Statistical Methods II
 
 $~$
@@ -54,7 +61,7 @@ $~$
 
 ### STA 570 - Statistical Methods I
 
-### STA 578 - Statistical Computing
+### STA 478/578 - Statistical Computing
 
 $~$
 
