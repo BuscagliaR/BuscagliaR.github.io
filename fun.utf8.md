@@ -1,0 +1,7 @@
+---
+title: "Fun"
+---
+
+Locks-of-Love
+
+![](Locks_of_Love_6-25-2020.gif)
